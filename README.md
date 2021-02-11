@@ -20,7 +20,7 @@ Move into firebase dir
 
 Run local Firestore
 
-`firebase emulators:start --only firestore --import=./cache --export-on-exit`
+`firebase emulators:start --only firestore --import=./cache`
 
 Your emulators start running on [http://localhost:4000/firestore](http://localhost:4000/firestore)
 
