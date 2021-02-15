@@ -19,7 +19,7 @@ const getSurah = async (req, res, next) => {
     if (req.query.maxResult) {
       query.limit(parseInt(req.query.maxResult));
     } else if (!req.query.cursor) {
-      query.limit(2);
+      query.limit(30);
     }
 
     const snapShot = await query.fetch();
