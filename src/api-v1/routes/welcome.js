@@ -1,17 +1,11 @@
 const welcomeEveryone = async (req, res, next) => {
   try {
-
     return res.status(200).json({
-      message: "Welcome Everyone!"
+      message: "Welcome Everyone!",
     });
-    
   } catch (err) {
-    console.error(err);
-    res.status(400).json({
-      error: {
-        message: err.message,
-      },
-    });
+    err.status = 400;
+    next(err);
   }
 };
 

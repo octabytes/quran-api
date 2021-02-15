@@ -1,12 +1,14 @@
 # quran-api
+
 NodeJs Quran API
 
 # Run Local
+
 First of all you should have to install the Firebase CLI
 
 `npm install -g firebase-tools`
 
-Clone repository 
+Clone repository
 
 `git clone https://github.com/octabytes/quran-api.git`
 
@@ -24,8 +26,9 @@ Run local Firestore
 
 Your emulators start running on [http://localhost:4000/firestore](http://localhost:4000/firestore)
 
-
 Run API
+
+`export FIRESTORE_EMULATOR_HOST="localhost:8080"`
 
 `npm start` or watch `npm run watch`
 
