@@ -42,26 +42,26 @@ Open in browser
    Id made with **surah number** and **ayah number** for example `1-2` which means
    first surah and second ayah.
 
-`http://localhost:5000/ayah/:id`
+`http://localhost:5000/v1/ayah/:id`
 
 2. Get `Ayah` by Ayah number
 
-`http://localhost:5000/ayah/number/:number`
+`http://localhost:5000/v1/ayah/number/:number`
 
 3. Get list of `Ayah` by surah number
 
-`http://localhost:5000/ayah/surah/:number?`
+`http://localhost:5000/v1/surah/:number?`
 
 ### Paginate data
 
 Using Cursor
-`http://localhost:5000/ayah/surah/?cursor=query_cursor`
+`http://localhost:5000/v1/ayah/surah/?cursor=query_cursor`
 
 Using Offset
-`http://localhost:5000/ayah/surah/?offset=30`
+`http://localhost:5000/v1/ayah/surah/?offset=30`
 
 ### Max result
 
 By default max results are 30
 
-`http://localhost:5000/ayah/surah/1?maxResult=5`
+`http://localhost:5000/v1/ayah/surah/1?maxResult=5`

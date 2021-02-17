@@ -17,7 +17,7 @@ const getSurah = async (req, res, next) => {
     }
 
     if (req.query.offset) {
-      query = Ayah.collection.offset(parseInt(req.query.offset));
+      query.offset(parseInt(req.query.offset));
     }
 
     if (req.query.maxResult) {
@@ -25,6 +25,8 @@ const getSurah = async (req, res, next) => {
     } else if (!req.query.cursor) {
       query.limit(30);
     }
+
+    query.orderBy("number");
 
     const snapShot = await query.fetch();
 
