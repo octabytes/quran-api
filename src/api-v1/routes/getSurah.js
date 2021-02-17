@@ -16,6 +16,10 @@ const getSurah = async (req, res, next) => {
       query = Ayah.collection.cursor(req.query.cursor);
     }
 
+    if (req.query.offset) {
+      query = Ayah.collection.offset(parseInt(req.query.offset));
+    }
+
     if (req.query.maxResult) {
       query.limit(parseInt(req.query.maxResult));
     } else if (!req.query.cursor) {

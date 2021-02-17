@@ -54,7 +54,11 @@ Open in browser
 
 ### Paginate data
 
+Using Cursor
 `http://localhost:5000/ayah/surah/?cursor=query_cursor`
+
+Using Offset
+`http://localhost:5000/ayah/surah/?offset=30`
 
 ### Max result
 
