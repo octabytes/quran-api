@@ -26,7 +26,13 @@ const getSurah = async (req, res, next) => {
       query.limit(30);
     }
 
-    query.orderBy("number");
+    if (req.query.direction) {
+      if (req.query.direction == "start") {
+        query.orderBy("number");
+      } else if (req.query.direction == "end") {
+        query.orderBy("-number");
+      }
+    }
 
     const snapShot = await query.fetch();
 

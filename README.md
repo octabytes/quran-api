@@ -52,16 +52,26 @@ Open in browser
 
 `http://localhost:5000/v1/surah/:number?`
 
+4. Get surah list
+
+`http://localhost:5000/v1/surah/list`
+
 ### Paginate data
 
 Using Cursor
 `http://localhost:5000/v1/ayah/surah/?cursor=query_cursor`
 
 Using Offset
-`http://localhost:5000/v1/ayah/surah/?offset=30`
+`http://localhost:5000/v1/ayah/surah/1?offset=30`
 
 ### Max result
 
 By default max results are 30
 
 `http://localhost:5000/v1/ayah/surah/1?maxResult=5`
+
+### Direction
+
+Direction is used to get Ayahs from start or from end, for example get surah 2 first 5 ayahs
+
+`http://localhost:5000/v1/ayah/surah/1?direction=start`
