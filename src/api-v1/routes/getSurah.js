@@ -1,4 +1,5 @@
 const Ayah = require("../models/Ayah");
+const surah_list = require("./surah_list");
 
 const getSurah = async (req, res, next) => {
   try {
@@ -44,8 +45,11 @@ const getSurah = async (req, res, next) => {
       ayahList.push(ayah.toObject());
     }
 
+    const surah = surah_list[ayahList[0].surah_number - 1];
+
     res.status(200).json({
       cursor: snapShot.cursor,
+      surah: surah,
       ayahs: ayahList,
     });
   } catch (err) {

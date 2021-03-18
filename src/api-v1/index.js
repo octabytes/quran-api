@@ -11,7 +11,7 @@ router.get("/welcome", welcomeEveryone);
 router.get("/ayah/:id", getSingleAyah.byId);
 router.get("/ayah/number/:number", getSingleAyah.byNumber);
 
-router.get("/surah/:number?", getSurah);
 router.get("/surah/list", getSurahList);
+router.get("/surah/:number?", getSurah);
 
 module.exports = router;

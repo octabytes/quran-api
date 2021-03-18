@@ -18,7 +18,9 @@ Install require packages
 
 Move into firebase dir
 
-`cd quran-api/firebase`
+`cd quran-api/firebase` This is not upto date
+
+`cd ../hadith-api/firebase`
 
 Run local Firestore
 
