@@ -22,20 +22,20 @@ const getSurah = async (req, res, next) => {
     }
 
     if (req.query.maxResult) {
-      query.limit(parseInt(req.query.maxResult));
+      if (req.query.direction) {
+        if (req.query.direction == "start") {
+          query.limit(parseInt(req.query.maxResult));
+        } else if (req.query.direction == "end") {
+          query.limitToLast(parseInt(req.query.maxResult));
+        }
+      } else {
+        query.limit(parseInt(req.query.maxResult));
+      }
     } else if (!req.query.cursor) {
       query.limit(30);
     }
 
-    if (req.query.direction) {
-      if (req.query.direction == "start") {
-        query.orderBy("number");
-      } else if (req.query.direction == "end") {
-        query.orderBy("-number");
-      }
-    } else {
-      query.orderBy("number");
-    }
+    query.orderBy("number");
 
     const snapShot = await query.fetch();
 
